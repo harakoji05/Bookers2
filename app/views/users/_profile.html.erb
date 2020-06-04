@@ -1,0 +1,39 @@
+
+	<%= flash[:notice] %>
+
+			<h2>User info</h2>
+
+			<%= attachment_image_tag user, :profile_image, format:'jpeg' , fallback: "img/no_image.jpg",  size: "70x70"%>
+
+			<table class="table" >
+					<tr>
+						<th>name</th>
+						<td><%= user.name %></td>
+					<tr>
+						<th>introduction</th>
+						<td><%= user.introduction %></td>
+					</tr>
+					<tr>
+						<th>follow</th>
+						<td>
+							<%= link_to following_user_path(user.id) do%>
+								<%= user.followings.count %></td>
+							<% end %>
+					</tr>
+					<tr>
+						<th>follower</th>
+						<td>
+							<%= link_to followers_user_path(user.id) do%>
+								<%= user.followers.count %>
+							<% end %>
+						</td>
+					</tr>
+			</table>
+
+			<%= link_to edit_user_path(user) do%>
+				<button type="button" class="btn btn-default btn-lg btn-block">
+					<i class="glyphicon glyphicon-wrench" aria-hidden="true"></i>
+				</button>
+			<% end %>
+
+
