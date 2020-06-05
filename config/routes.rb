@@ -11,11 +11,10 @@ Rails.application.routes.draw do
 
    get '/home/about' => "books#about"
 
-   resources :users
+   resources :users do
+    resource :relationships, only: [:create, :destroy]
+    get 'follows' => 'relationships#follower', as: 'follows'
+    get 'followers' => 'relationships#followed', as: 'followers'
+   end
 
-   resources :relationships, only: [:create, :destroy]
-
-   get '/users/:id/following' => "users#following", as: 'following_user'
-
-   get '/users/:id/followers' => "users#followers", as: 'followers_user'
 end
