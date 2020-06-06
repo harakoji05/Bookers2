@@ -1,33 +1,28 @@
+<%= flash[:notice] %>
+<h2>User info</h2>
+<%= attachment_image_tag user, :profile_image, format:'jpeg' , fallback: "img/no_image.jpg",  size: "70x70"%>
+<table class="table" >
+	<tr>
+		<th>name</th>
+		<td><%= user.name %></td>
+	</tr>
+		<th>introduction</th>
+		<td><%= user.introduction %></td>
+	</tr>
+	<tr>
+		<th>follows</th>
+    	<td><%= link_to user.follower.count, user_follows_path(user) %></td>
+	</tr>
+	<tr>
+		<th>followers</th>
+    	<td><%= link_to user.followed.count, user_followers_path(user) %></td>
+	</tr>
+</table>
 
-	<%= flash[:notice] %>
-
-			<h2>User info</h2>
-
-			<%= attachment_image_tag user, :profile_image, format:'jpeg' , fallback: "img/no_image.jpg",  size: "70x70"%>
-
-			<table class="table" >
-					<tr>
-						<th>name</th>
-						<td><%= user.name %></td>
-					<tr>
-						<th>introduction</th>
-						<td><%= user.introduction %></td>
-					</tr>
-					<tr>
-						<th>follows</th>
-    					<th><%= link_to user.follower.count, user_follows_path(user) %></th>
-					</tr>
-					<tr>
-						<th>followers</th>
-    					<th><%= link_to user.followed.count, user_followers_path(user) %></th>
-						</td>
-					</tr>
-			</table>
-
-			<%= link_to edit_user_path(user) do%>
-				<button type="button" class="btn btn-default btn-lg btn-block">
-					<i class="glyphicon glyphicon-wrench" aria-hidden="true"></i>
-				</button>
-			<% end %>
+<%= link_to edit_user_path(user) do%>
+	<button type="button" class="btn btn-default btn-lg btn-block">
+		<i class="glyphicon glyphicon-wrench" aria-hidden="true"></i>
+	</button>
+<% end %>
 
 
