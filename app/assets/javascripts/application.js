@@ -15,10 +15,10 @@
 //= require activestorage
 //= require jquery
 //= require turbolinks
+
+//= require jquery.jpostal
+
 //= require_tree .
 
-$(document).ready(function(){
-	$('.jquery').on('click', function(){
-		$(this).css('color','red');
-	});
-});
+
+

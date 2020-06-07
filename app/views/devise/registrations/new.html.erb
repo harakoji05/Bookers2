@@ -17,6 +17,26 @@
     </div>
 
     <div class="field">
+      <%= f.label :postcode %><br />
+      <%= f.text_field :postcode, autofocus: true, class: "postal_code", id: "address_zipcode" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :prefecture_code %><br />
+      <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, class: "address", id: "address_prefecture_name" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address_city %><br />
+      <%= f.text_field :address_city, autofocus: true, class: "address", id:"address_city" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :address_street %><br />
+      <%= f.text_field :address_street, autofocus: true, class: "address", id: "address_street" %>
+    </div>
+
+    <div class="field">
       <%= f.label :password %>
         <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>

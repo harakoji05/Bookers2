@@ -7,9 +7,11 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
    end
 
-   root'books#top'
+   root'books#index'
 
-   get '/home/about' => "books#about"
+   get '/top' => "books#top"
+
+   get '/about' => "books#about"
 
    resources :users do
     resource :relationships, only: [:create, :destroy]
