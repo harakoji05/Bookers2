@@ -3,8 +3,8 @@ Rails.application.routes.draw do
    devise_for :users
 
    resources :books do
-    resource :book_comments, only: [:create, :destroy]
-    resource :favorites, only: [:create, :destroy]
+    resources :book_comments, only: [:create, :destroy]
+    resources :favorites, only: [:create, :destroy]
    end
 
    root'books#top'

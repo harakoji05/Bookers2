@@ -1,0 +1,2 @@
+$('textarea[name="book_comment[comment]"]').val('');
+$(".comment_<%= @book.id %>").html("<%= j(render 'books/book_comment', book: @book, book_comment: @book_comment ) %>");
