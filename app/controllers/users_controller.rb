@@ -36,6 +36,6 @@ private
   end
 
   def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image, :postcode, :prefecture_code, :address_city, :address_street)
+    params.require(:user).permit(:name, :introduction, :profile_image, :postcode, :prefecture_code, :address_city, :address_street, :latitude, :longitude)
   end
 end

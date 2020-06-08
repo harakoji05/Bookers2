@@ -52,6 +52,9 @@ class User < ApplicationRecord
       self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
     end
 
+    geocoded_by :address_city
+    after_validation :geocode, if: :address_city_changed?
+
     attachment :profile_image, destroy: false
 
     validates :name, presence: true

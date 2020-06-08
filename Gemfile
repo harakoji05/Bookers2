@@ -73,3 +73,6 @@ gem 'jp_prefecture'
 
 gem 'jquery-rails'
 
+gem "geocoder"
+
+gem "dotenv-rails"
