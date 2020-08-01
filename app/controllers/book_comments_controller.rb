@@ -19,7 +19,7 @@ class BookCommentsController < ApplicationController
     if @book_comment.user == current_user
       @book_comment.destroy
     else
-    redirect_to request.referer
+      redirect_to request.referer
     end
   end
 
@@ -28,5 +28,4 @@ class BookCommentsController < ApplicationController
   def book_comment_params
     params.require(:book_comment).permit(:comment)
   end
-
 end

@@ -1,6 +1,6 @@
 <div class="col">
 
-  <h2>Sign up</h2>
+  <h2>新規登録画面</h2>
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
     
@@ -21,10 +21,6 @@
       <%= f.text_field :postcode, autofocus: true, class: "postal_code", id: "address_zipcode" %>
     </div>
 
-    <div class="field">
-      <%= f.label :prefecture_code %><br />
-      <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all, :name, :name, class: "address", id: "address_prefecture_name" %>
-    </div>
 
     <div class="field">
       <%= f.label :address_city %><br />
